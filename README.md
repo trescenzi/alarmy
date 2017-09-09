@@ -30,6 +30,7 @@ within a docker container `yarn serve` will provide an easy way to serve it.
 - Use service workers to allow this app to work on mobile devices well
   - Also add a vibration pattern for mobile devices
 - Add a night time colorscheme for when it's night time
+- Add tests!
 
 ## Known Bugs
 
