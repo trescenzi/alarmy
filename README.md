@@ -18,6 +18,11 @@ Alarmy is intended to be used by serving `index.html`. For local development `ya
 
 # Next Steps
 
+## Cleanleness
+- Add tests!
+- Split up the CSS
+- Make generateInitialClockDom not a terrible mess
+
 ## Enhancments
 - Add feedback when an alarm is set
   - Currently the only way to know if the alarm set actually did anything is to notice the circle starting to fill in
@@ -31,8 +36,6 @@ Alarmy is intended to be used by serving `index.html`. For local development `ya
 - Use service workers to allow this app to work on mobile devices well
   - Also add a vibration pattern for mobile devices
 - Add a night time colorscheme for when it's night time
-- Add tests!
-- Split up the CSS
 
 ## Known Bugs
 
