@@ -2,7 +2,7 @@
 
 This simple alarm allows you to set an alarm anytime within the next 24 hours.
 
-Alarmy is [hosted on heroku](alarmy.herokuapp.com).
+Alarmy is [hosted on heroku](https://alarmy.herokuapp.com).
 
 ## Building
 
