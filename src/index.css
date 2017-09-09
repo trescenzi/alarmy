@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  padding: 10px;
+  background-color: seashell;
+}
+
+body.day {
+  background-color: linen;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.clock {
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fill {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  border: 5px solid coral;
+  position: absolute;
+  z-index: 1;
+}
+
+.covertop, .coverbottom {
+  z-index: 2;
+  position: absolute;
+  width: calc(100% + 11px);
+  background: seashell;
+  left: -6px;
+}
+
+.undoing {
+  transition: height 1s, top 1s;
+}
+
+.covertop {
+  top: -6px;
+  height: calc(50% + 11px);
+}
+
+.coverbottom {
+  top: 50%;
+  height: calc(50% + 11px);
+}
+
+.alarming .covertop, .alarming .coverbottom {
+  height: 0% !important;
+  top: 100% !important;
+}
+
+.outsideliner, .insideliner {
+  z-index: 3;
+}
+
+.outsideliner, .insideliner {
+  border-radius: 50%;
+  border: 1px solid sandybrown;
+}
+
+.outsideliner {
+  height: calc(100% + 10px);
+  width: calc(100% + 10px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+.insideliner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.hours, .minutes, .seconds, .meridiem {
+  padding-right: 10px;
+  font-size: 50px;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+}
+
+.shrunken.hours, .shrunken.minutes, .shrunken.seconds, .shrunken.meridiem {
+  padding-right: 10px;
+  font-size: 15px;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
+.switch {
+  position: relative;
+  text-align: center;
+  flex: 1;
+}
+
+.switch.selected::after {
+  content: '';
+  width: 50%;
+  position: absolute;
+  top: -10px;
+  left: 25%;
+  border: 4px solid lightblue;
+  border-radius: 4px;
+}
+
+.switches {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+}
+
+.time {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time, .switches {
+  z-index: 4;
+}
+
+.settimebutton {
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-size: 25px;
+  border-radius: 100px;
+  background: lightsalmon;
+  text-align: center;
+  padding: 10px;
+}
