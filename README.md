@@ -2,6 +2,8 @@
 
 This simple alarm allows you to set an alarm anytime within the next 24 hours.
 
+Alarmy is [hosted on heroku](alarmy.herokuapp.com).
+
 ## Building
 
 - `yarn install`
@@ -12,8 +14,7 @@ the dependencies and then build it with `yarn build`.
 
 ## Usage
 
-Alarmy is intended to be used by serving `index.html`. For local development, or deployement to
-within a docker container `yarn dev` will provide an easy way to serve it.
+Alarmy is intended to be used by serving `index.html`. For local development `yarn run` will provide an easy way to serve it.
 
 # Next Steps
 
@@ -31,6 +32,7 @@ within a docker container `yarn dev` will provide an easy way to serve it.
   - Also add a vibration pattern for mobile devices
 - Add a night time colorscheme for when it's night time
 - Add tests!
+- Split up the CSS
 
 ## Known Bugs
 
