@@ -13,7 +13,7 @@ the dependencies and then build it with `yarn build`.
 ## Usage
 
 Alarmy is intended to be used by serving `index.html`. For local development, or deployement to
-within a docker container `yarn serve` will provide an easy way to serve it.
+within a docker container `yarn dev` will provide an easy way to serve it.
 
 # Next Steps
 

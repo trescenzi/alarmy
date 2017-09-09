@@ -7,12 +7,12 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "serve": "yarn build && ws --spa index.html",
-    "start": "yarn serve"
+    "dev": "yarn build && http-server",
+    "start": "yarn build && http-server -p $PORT"
   },
   "dependencies": {
     "css-loader": "^0.28.7",
-    "local-web-server": "^2.2.4",
+    "http-server": "^0.10.0",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.6"
   },
