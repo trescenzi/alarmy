@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "serve": "yarn build && ws --spa index.html"
+    "serve": "yarn build && ws --spa index.html",
+    "run": "yarn serve"
   },
   "dependencies": {
     "css-loader": "^0.28.7",
