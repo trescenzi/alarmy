@@ -1,8 +1,4 @@
-import {
-  generateInitialClockDom,
-  buildTimeStrings,
-  appendClock
-} from './utils';
+import BasicClock from './basic-clock';
 
 function unsetAlarmStyles() {
   document.querySelectorAll('.covertop, .coverbottom').forEach((node) => {
@@ -21,9 +17,9 @@ function setAlarmStyles(transitionTime) {
   document.querySelector('.fill').classList.add('alarming');
 }
 
-class Alarm {
+class Alarm extends BasicClock{
   constructor() {
-    this.dom = generateInitialClockDom(buildTimeStrings(), true);
+    super(null, true);
     this.generateSetTimeButton();
   }
 
@@ -35,14 +31,6 @@ class Alarm {
     button.addEventListener('click', () => this.setAlarm());
 
     this.dom.button = button;
-  }
-
-  show() {
-    appendClock(this.dom);
-  }
-
-  hide() {
-    Object.keys(this.dom).map((key) => this.dom[key].remove());
   }
 
   setAlarm() {
@@ -73,6 +61,11 @@ class Alarm {
     const timeTillAlarm = then.getTime() - now.getTime();
     this.alarmTimeout = setTimeout(() => this.alarm(), timeTillAlarm);
     this.setAlarmStylesTimeout = setTimeout(() => setAlarmStyles(timeTillAlarm - 1000), 1000);
+  }
+
+  destroy() {
+    clearTimeout(this.setAlarmTimeout);
+    super.destroy();
   }
 
   alarm() {

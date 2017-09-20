@@ -1,21 +1,9 @@
-import {
-  generateInitialClockDom,
-  buildTimeStrings,
-  appendClock
-} from './utils';
+import BasicClock from './basic-clock';
 
-class Clock {
-  constructor() {
+class Clock extends BasicClock {
+  constructor(initialDate) {
+    super(initialDate, false);
     this.clockInterval = setInterval(() => this.update(), 1000);
-    this.dom = generateInitialClockDom(buildTimeStrings(new Date()));
-  }
-
-  show() {
-    appendClock(this.dom);
-  }
-
-  hide() {
-    Object.keys(this.dom).map((key) => this.dom[key].remove());
   }
 
   unshrink() {
@@ -32,10 +20,11 @@ class Clock {
 
   destroy() {
     clearInterval(this.clockInterval);
+    super.destroy();
   }
 
   update() {
-    const {hours, minutes, seconds, meridiem} = buildTimeStrings(new Date());
+    const {hours, minutes, seconds, meridiem} = this.buildTimeStrings(new Date());
     if (this.dom.hours.innerText !== hours ) {
       this.dom.hours.innerText = hours;
     }
