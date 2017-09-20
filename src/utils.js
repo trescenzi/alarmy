@@ -1,6 +1,0 @@
-
-export {
-  buildTimeStrings,
-  appendClock,
-  generateInitialClockDom,
-};
