@@ -3,7 +3,7 @@ import Alarm from './alarm';
 import styles from './index.css';
 
 window.addEventListener('load', () => {
-  const clock = new Clock();
+  const clock = new Clock(new Date());
   const alarm = new Alarm();
   clock.show();
 
